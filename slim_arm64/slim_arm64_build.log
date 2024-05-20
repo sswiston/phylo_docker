@@ -1,0 +1,183 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile:
+#1 transferring dockerfile: 3.16kB done
+#1 DONE 0.3s
+
+#2 [internal] load metadata for docker.io/sswiston/phylo_docker:basic_arm64
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [ 1/55] FROM docker.io/sswiston/phylo_docker:basic_arm64
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 6.63kB done
+#5 DONE 0.0s
+
+#6 [12/55] RUN apk add freetype-dev
+#6 CACHED
+
+#7 [22/55] WORKDIR /revbayes/
+#7 CACHED
+
+#8 [15/55] RUN apk add harfbuzz-dev
+#8 CACHED
+
+#9 [26/55] RUN ln -s /revbayes/projects/cmake/rb /usr/local/bin/rb
+#9 CACHED
+
+#10 [21/55] RUN git clone https://github.com/revbayes/revbayes.git /revbayes
+#10 CACHED
+
+#11 [28/55] WORKDIR /tensorphylo/
+#11 CACHED
+
+#12 [44/55] RUN R -e "install.packages('ggtree',dependencies=TRUE,repos='http://cran.rstudio.com/')"
+#12 CACHED
+
+#13 [37/55] RUN R -e "library(devtools); devtools::install_github("revbayes/RevGadgets")"
+#13 CACHED
+
+#14 [16/55] RUN apk add fribidi-dev
+#14 CACHED
+
+#15 [23/55] RUN git checkout stochmap_tp_dirty_merge
+#15 CACHED
+
+#16 [ 3/55] RUN apk add protoc
+#16 CACHED
+
+#17 [35/55] RUN R -e "install.packages('devtools',dependencies=TRUE,repos='http://cran.rstudio.com/')"
+#17 CACHED
+
+#18 [38/55] RUN R -e "install.packages('HDInterval',dependencies=TRUE,repos='http://cran.rstudio.com/')"
+#18 CACHED
+
+#19 [41/55] RUN R -e "install.packages('coda',dependencies=TRUE,repos='http://cran.rstudio.com/')"
+#19 CACHED
+
+#20 [27/55] RUN git clone https://bitbucket.org/mrmay/tensorphylo.git /tensorphylo
+#20 CACHED
+
+#21 [11/55] RUN apk add libgit2-dev
+#21 CACHED
+
+#22 [13/55] RUN apk add libxml2-dev
+#22 CACHED
+
+#23 [24/55] WORKDIR /revbayes/projects/cmake/
+#23 CACHED
+
+#24 [29/55] RUN git checkout tree-inference
+#24 CACHED
+
+#25 [ 5/55] RUN apk add autoconf
+#25 CACHED
+
+#26 [39/55] RUN R -e "install.packages('rjson',dependencies=TRUE,repos='http://cran.rstudio.com/')"
+#26 CACHED
+
+#27 [43/55] RUN R -e "install.packages('data.table',dependencies=TRUE,repos='http://cran.rstudio.com/')"
+#27 CACHED
+
+#28 [48/55] RUN R -e "install.packages('reshape2',dependencies=TRUE,repos='http://cran.rstudio.com/')"
+#28 CACHED
+
+#29 [33/55] RUN mkdir /.plugins
+#29 CACHED
+
+#30 [ 8/55] RUN apk add build-base
+#30 CACHED
+
+#31 [31/55] RUN sed -i -e 's/configure --prefix=${ncl_folder}/configure --prefix=${ncl_folder} --build=aarch64-unknown-linux-gnu/g' install.sh
+#31 CACHED
+
+#32 [30/55] WORKDIR /tensorphylo/build/installer/
+#32 CACHED
+
+#33 [42/55] RUN R -e "install.packages('cowplot',dependencies=TRUE,repos='http://cran.rstudio.com/')"
+#33 CACHED
+
+#34 [46/55] RUN R -e "install.packages('gridExtra',dependencies=TRUE,repos='http://cran.rstudio.com/')"
+#34 CACHED
+
+#35 [45/55] RUN R -e "install.packages('grid',dependencies=TRUE,repos='http://cran.rstudio.com/')"
+#35 CACHED
+
+#36 [17/55] RUN apk add libpng-dev tiff-dev jpeg-dev
+#36 CACHED
+
+#37 [34/55] RUN cp /tensorphylo/build/installer/lib/libTensorPhylo.so /.plugins/libTensorPhylo.so
+#37 CACHED
+
+#38 [36/55] RUN R -e "install.packages('ggplot2',dependencies=TRUE,repos='http://cran.rstudio.com/')"
+#38 CACHED
+
+#39 [ 6/55] RUN apk add curl
+#39 CACHED
+
+#40 [ 4/55] RUN apk add automake
+#40 CACHED
+
+#41 [20/55] RUN apk add gdal-dev
+#41 CACHED
+
+#42 [ 9/55] RUN apk add boost-dev
+#42 CACHED
+
+#43 [18/55] RUN apk add imagemagick-dev
+#43 CACHED
+
+#44 [47/55] RUN R -e "install.packages('igraph',dependencies=TRUE,repos='http://cran.rstudio.com/')"
+#44 CACHED
+
+#45 [ 7/55] RUN apk add libcurl
+#45 CACHED
+
+#46 [10/55] RUN apk add linux-headers
+#46 CACHED
+
+#47 [ 2/55] RUN apk add cmake
+#47 CACHED
+
+#48 [49/55] RUN R -e "install.packages('BiocManager',dependencies=TRUE,repos='http://cran.rstudio.com/')"
+#48 CACHED
+
+#49 [19/55] RUN apk add udunits-dev
+#49 CACHED
+
+#50 [25/55] RUN ./build.sh
+#50 CACHED
+
+#51 [40/55] RUN R -e "install.packages('ape',dependencies=TRUE,repos='http://cran.rstudio.com/')"
+#51 CACHED
+
+#52 [14/55] RUN apk add fontconfig-dev
+#52 CACHED
+
+#53 [32/55] RUN bash install.sh
+#53 CACHED
+
+#54 [50/55] RUN R -e "library(BiocManager); BiocManager::install("ggtree")"
+#54 CACHED
+
+#55 [51/55] COPY dockerfile_slim_arm64.txt /dockerfile_slim_arm64.txt
+#55 DONE 0.9s
+
+#56 [52/55] COPY test.sh /test.sh
+#56 DONE 0.0s
+
+#57 exporting to image
+#57 exporting layers 0.0s done
+#57 writing image sha256:0f420d30591c4823b84983b22c6c59e1592399c264dfede2f2458cb39558920a done
+#57 naming to docker.io/sswiston/phylo_docker:slim_arm64 done
+#57 DONE 0.0s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/l2s13psogd4sld46fttmn2l5b
+
+Build multi-platform images faster with Docker Build Cloud: https://docs.docker.com/go/docker-build-cloud

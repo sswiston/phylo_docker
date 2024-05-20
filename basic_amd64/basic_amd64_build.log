@@ -1,0 +1,279 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 848B 0.0s done
+#1 DONE 0.1s
+
+#2 [internal] load metadata for docker.io/library/alpine:latest
+#2 ...
+
+#3 [auth] library/alpine:pull token for registry-1.docker.io
+#3 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/alpine:latest
+#2 DONE 1.4s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 1.08kB done
+#5 DONE 0.0s
+
+#6 [ 1/20] FROM docker.io/library/alpine:latest@sha256:c5b1261d6d3e43071626931fc004f70149baeba2c8ec672bd4f27761f8e1ad6b
+#6 resolve docker.io/library/alpine:latest@sha256:c5b1261d6d3e43071626931fc004f70149baeba2c8ec672bd4f27761f8e1ad6b 0.0s done
+#6 sha256:c5b1261d6d3e43071626931fc004f70149baeba2c8ec672bd4f27761f8e1ad6b 1.64kB / 1.64kB done
+#6 sha256:6457d53fb065d6f250e1504b9bc42d5b6c65941d57532c072d929dd0628977d0 528B / 528B done
+#6 sha256:05455a08881ea9cf0e752bc48e61bbd71a34c029bb13df01e40e3e70e0d007bd 1.47kB / 1.47kB done
+#6 sha256:4abcf20661432fb2d719aaf90656f55c287f8ca915dc1c92ec14ff61e67fbaf8 0B / 3.41MB 0.1s
+#6 sha256:4abcf20661432fb2d719aaf90656f55c287f8ca915dc1c92ec14ff61e67fbaf8 1.05MB / 3.41MB 0.6s
+#6 sha256:4abcf20661432fb2d719aaf90656f55c287f8ca915dc1c92ec14ff61e67fbaf8 2.10MB / 3.41MB 0.8s
+#6 sha256:4abcf20661432fb2d719aaf90656f55c287f8ca915dc1c92ec14ff61e67fbaf8 3.15MB / 3.41MB 1.0s
+#6 sha256:4abcf20661432fb2d719aaf90656f55c287f8ca915dc1c92ec14ff61e67fbaf8 3.41MB / 3.41MB 1.0s done
+#6 extracting sha256:4abcf20661432fb2d719aaf90656f55c287f8ca915dc1c92ec14ff61e67fbaf8
+#6 extracting sha256:4abcf20661432fb2d719aaf90656f55c287f8ca915dc1c92ec14ff61e67fbaf8 0.1s done
+#6 DONE 1.3s
+
+#7 [ 2/20] RUN apk update
+#7 0.217 fetch https://dl-cdn.alpinelinux.org/alpine/v3.19/main/x86_64/APKINDEX.tar.gz
+#7 0.965 fetch https://dl-cdn.alpinelinux.org/alpine/v3.19/community/x86_64/APKINDEX.tar.gz
+#7 1.822 v3.19.1-568-g91908242c77 [https://dl-cdn.alpinelinux.org/alpine/v3.19/main]
+#7 1.822 v3.19.1-572-g36239d5763b [https://dl-cdn.alpinelinux.org/alpine/v3.19/community]
+#7 1.822 OK: 23037 distinct packages available
+#7 DONE 1.9s
+
+#8 [ 3/20] RUN apk upgrade
+#8 0.524 Upgrading critical system libraries and apk-tools:
+#8 0.524 (1/1) Upgrading apk-tools (2.14.0-r5 -> 2.14.4-r0)
+#8 0.656 Executing busybox-1.36.1-r15.trigger
+#8 0.731 Continuing the upgrade transaction with new apk-tools:
+#8 0.736 fetch https://dl-cdn.alpinelinux.org/alpine/v3.19/main/x86_64/APKINDEX.tar.gz
+#8 0.971 fetch https://dl-cdn.alpinelinux.org/alpine/v3.19/community/x86_64/APKINDEX.tar.gz
+#8 1.628 (1/6) Upgrading busybox (1.36.1-r15 -> 1.36.1-r16)
+#8 1.780 Executing busybox-1.36.1-r16.post-upgrade
+#8 1.789 (2/6) Upgrading busybox-binsh (1.36.1-r15 -> 1.36.1-r16)
+#8 1.804 (3/6) Upgrading ca-certificates-bundle (20230506-r0 -> 20240226-r0)
+#8 1.861 (4/6) Upgrading libcrypto3 (3.1.4-r5 -> 3.1.4-r6)
+#8 2.186 (5/6) Upgrading libssl3 (3.1.4-r5 -> 3.1.4-r6)
+#8 2.356 (6/6) Upgrading ssl_client (1.36.1-r15 -> 1.36.1-r16)
+#8 2.374 Executing busybox-1.36.1-r16.trigger
+#8 2.378 OK: 7 MiB in 15 packages
+#8 DONE 2.5s
+
+#9 [ 4/20] RUN apk add bash
+#9 0.493 (1/4) Installing ncurses-terminfo-base (6.4_p20231125-r0)
+#9 0.596 (2/4) Installing libncursesw (6.4_p20231125-r0)
+#9 0.653 (3/4) Installing readline (8.2.1-r2)
+#9 0.684 (4/4) Installing bash (5.2.21-r0)
+#9 0.781 Executing bash-5.2.21-r0.post-install
+#9 0.783 Executing busybox-1.36.1-r16.trigger
+#9 0.787 OK: 10 MiB in 19 packages
+#9 DONE 0.9s
+
+#10 [ 5/20] RUN apk add git
+#10 0.505 (1/10) Installing ca-certificates (20240226-r0)
+#10 0.636 (2/10) Installing brotli-libs (1.1.0-r1)
+#10 0.745 (3/10) Installing c-ares (1.27.0-r0)
+#10 0.773 (4/10) Installing libunistring (1.1-r2)
+#10 0.895 (5/10) Installing libidn2 (2.3.4-r4)
+#10 0.956 (6/10) Installing nghttp2-libs (1.58.0-r0)
+#10 0.996 (7/10) Installing libcurl (8.5.0-r0)
+#10 1.071 (8/10) Installing libexpat (2.6.2-r0)
+#10 1.097 (9/10) Installing pcre2 (10.42-r2)
+#10 1.169 (10/10) Installing git (2.43.4-r0)
+#10 1.880 Executing busybox-1.36.1-r16.trigger
+#10 1.884 Executing ca-certificates-20240226-r0.trigger
+#10 1.926 OK: 21 MiB in 29 packages
+#10 DONE 2.0s
+
+#11 [ 6/20] RUN apk add unzip
+#11 0.520 (1/1) Installing unzip (6.0-r14)
+#11 0.667 Executing busybox-1.36.1-r16.trigger
+#11 0.671 OK: 21 MiB in 30 packages
+#11 DONE 0.8s
+
+#12 [ 7/20] RUN apk add vim
+#12 0.533 (1/3) Installing vim-common (9.0.2127-r0)
+#12 2.370 (2/3) Installing xxd (9.0.2127-r0)
+#12 2.815 (3/3) Installing vim (9.0.2127-r0)
+#12 3.708 Executing busybox-1.36.1-r16.trigger
+#12 3.714 OK: 52 MiB in 33 packages
+#12 DONE 3.9s
+
+#13 [ 8/20] RUN apk add gcc
+#13 0.598 (1/12) Installing libgcc (13.2.1_git20231014-r0)
+#13 0.713 (2/12) Installing jansson (2.14-r4)
+#13 0.735 (3/12) Installing libstdc++ (13.2.1_git20231014-r0)
+#13 1.063 (4/12) Installing zstd-libs (1.5.5-r8)
+#13 1.181 (5/12) Installing binutils (2.41-r0)
+#13 1.891 (6/12) Installing libgomp (13.2.1_git20231014-r0)
+#13 1.956 (7/12) Installing libatomic (13.2.1_git20231014-r0)
+#13 1.974 (8/12) Installing gmp (6.3.0-r0)
+#13 2.078 (9/12) Installing isl26 (0.26-r1)
+#13 2.303 (10/12) Installing mpfr4 (4.2.1-r0)
+#13 2.393 (11/12) Installing mpc1 (1.3.1-r1)
+#13 2.432 (12/12) Installing gcc (13.2.1_git20231014-r0)
+#13 16.08 Executing busybox-1.36.1-r16.trigger
+#13 16.09 OK: 191 MiB in 45 packages
+#13 DONE 16.4s
+
+#14 [ 9/20] RUN apk add g++
+#14 0.676 (1/4) Installing libstdc++-dev (13.2.1_git20231014-r0)
+#14 2.320 (2/4) Installing musl-dev (1.2.4_git20230717-r4)
+#14 3.355 (3/4) Installing libc-dev (0.7.2-r5)
+#14 3.374 (4/4) Installing g++ (13.2.1_git20231014-r0)
+#14 8.115 Executing busybox-1.36.1-r16.trigger
+#14 8.122 OK: 259 MiB in 49 packages
+#14 DONE 8.3s
+
+#15 [10/20] RUN apk add 'python3=3.11.9-r0' 'python3-dev=3.11.9-r0'
+#15 0.522 (1/13) Installing libbz2 (1.0.8-r6)
+#15 0.690 (2/13) Installing libffi (3.4.4-r3)
+#15 0.730 (3/13) Installing gdbm (1.23-r1)
+#15 0.760 (4/13) Installing xz-libs (5.4.5-r0)
+#15 0.816 (5/13) Installing mpdecimal (2.5.1-r2)
+#15 0.872 (6/13) Installing libpanelw (6.4_p20231125-r0)
+#15 0.899 (7/13) Installing sqlite-libs (3.44.2-r0)
+#15 1.142 (8/13) Installing python3 (3.11.9-r0)
+#15 3.941 (9/13) Installing python3-pycache-pyc0 (3.11.9-r0)
+#15 5.239 (10/13) Installing pyc (3.11.9-r0)
+#15 5.257 (11/13) Installing python3-pyc (3.11.9-r0)
+#15 5.273 (12/13) Installing pkgconf (2.1.0-r0)
+#15 5.307 (13/13) Installing python3-dev (3.11.9-r0)
+#15 16.12 Executing busybox-1.36.1-r16.trigger
+#15 16.14 OK: 367 MiB in 62 packages
+#15 DONE 16.3s
+
+#16 [11/20] RUN ln -s /usr/bin/python3 /usr/local/bin/python
+#16 DONE 0.2s
+
+#17 [12/20] RUN apk add py3-pip
+#17 0.524 (1/8) Installing py3-setuptools-pyc (68.2.2-r0)
+#17 1.150 (2/8) Installing py3-pip-pyc (23.3.1-r0)
+#17 2.014 (3/8) Installing py3-parsing (3.1.1-r0)
+#17 2.083 (4/8) Installing py3-parsing-pyc (3.1.1-r0)
+#17 2.189 (5/8) Installing py3-packaging-pyc (23.2-r0)
+#17 2.253 (6/8) Installing py3-packaging (23.2-r0)
+#17 2.303 (7/8) Installing py3-setuptools (68.2.2-r0)
+#17 2.543 (8/8) Installing py3-pip (23.3.1-r0)
+#17 3.101 Executing busybox-1.36.1-r16.trigger
+#17 3.109 OK: 392 MiB in 70 packages
+#17 DONE 3.3s
+
+#18 [13/20] RUN echo "@community https://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories
+#18 DONE 0.2s
+
+#19 [14/20] RUN apk add 'R@community=4.4.0-r0' 'R-dev@community=4.4.0-r0'
+#19 0.412 fetch https://dl-cdn.alpinelinux.org/alpine/edge/community/x86_64/APKINDEX.tar.gz
+#19 2.117 (1/76) Installing R-mathlib (4.3.1-r1)
+#19 2.274 (2/76) Installing libquadmath (13.2.1_git20231014-r0)
+#19 2.742 (3/76) Installing libgfortran (13.2.1_git20231014-r0)
+#19 3.220 (4/76) Installing openblas (0.3.25-r0)
+#19 6.933 (5/76) Installing libxau (1.0.11-r3)
+#19 6.954 (6/76) Installing libmd (1.1.0-r0)
+#19 6.977 (7/76) Installing libbsd (0.11.7-r3)
+#19 7.005 (8/76) Installing libxdmcp (1.1.4-r3)
+#19 7.027 (9/76) Installing libxcb (1.16-r0)
+#19 7.122 (10/76) Installing libx11 (1.8.7-r0)
+#19 7.528 (11/76) Installing libxext (1.3.5-r3)
+#19 7.549 (12/76) Installing libice (1.1.1-r5)
+#19 7.577 (13/76) Installing libuuid (2.39.3-r0)
+#19 7.705 (14/76) Installing libsm (1.2.4-r3)
+#19 7.736 (15/76) Installing libxt (1.3.0-r4)
+#19 7.806 (16/76) Installing libxmu (1.1.4-r2)
+#19 7.846 (17/76) Installing libxrender (0.9.11-r4)
+#19 7.871 (18/76) Installing libpng (1.6.40-r0)
+#19 7.928 (19/76) Installing freetype (2.13.2-r0)
+#19 8.088 (20/76) Installing fontconfig (2.14.2-r4)
+#19 8.164 (21/76) Installing pixman (0.42.2-r2)
+#19 8.263 (22/76) Installing cairo (1.18.0-r0)
+#19 8.459 (23/76) Installing libdeflate (1.19-r0)
+#19 8.501 (24/76) Installing libintl (0.22.3-r0)
+#19 8.523 (25/76) Installing libblkid (2.39.3-r0)
+#19 8.563 (26/76) Installing libmount (2.39.3-r0)
+#19 8.618 (27/76) Installing glib (2.78.6-r0)
+#19 9.129 (28/76) Installing icu-data-en (74.1-r0)
+#19 9.536 Executing icu-data-en-74.1-r0.post-install
+#19 9.540 *
+#19 9.540 * If you need ICU with non-English locales and legacy charset support, install
+#19 9.540 * package icu-data-full.
+#19 9.540 *
+#19 9.540 (29/76) Installing icu-libs (74.1-r0)
+#19 10.08 (30/76) Installing libjpeg-turbo (3.0.1-r0)
+#19 10.19 (31/76) Installing libxft (2.3.8-r2)
+#19 10.22 (32/76) Installing fribidi (1.0.13-r0)
+#19 10.24 (33/76) Installing graphite2 (1.3.14-r6)
+#19 10.28 (34/76) Installing harfbuzz (8.3.0-r0)
+#19 10.47 (35/76) Installing pango (1.51.0-r0)
+#19 11.08 (36/76) Installing tzdata (2024a-r0)
+#19 11.26 (37/76) Installing tcl (8.6.13-r1)
+#19 11.95 (38/76) Installing libsharpyuv (1.3.2-r0)
+#19 11.98 (39/76) Installing libwebp (1.3.2-r0)
+#19 12.05 (40/76) Installing tiff (4.6.0-r0)
+#19 12.11 (41/76) Installing tk (8.6.13-r2)
+#19 12.83 (42/76) Installing R@community (4.4.0-r0)
+#19 21.87 Executing R-4.4.0-r0.post-install
+#19 21.87 *
+#19 21.87 * If you want to install R packages from CRAN that contains native extensions,
+#19 21.87 * then you must also install R-dev.
+#19 21.87 *
+#19 21.87 * To avoid warnings about R.css when installing R extensions also install R-doc.
+#19 21.87 *
+#19 21.87 (43/76) Installing bzip2-dev (1.0.8-r6)
+#19 21.90 (44/76) Installing brotli (1.1.0-r1)
+#19 21.91 (45/76) Installing brotli-dev (1.1.0-r1)
+#19 21.93 (46/76) Installing c-ares-dev (1.27.0-r0)
+#19 21.96 (47/76) Installing libidn2-dev (2.3.4-r4)
+#19 21.98 (48/76) Installing nghttp2-dev (1.58.0-r0)
+#19 22.01 (49/76) Installing openssl-dev (3.1.4-r6)
+#19 22.17 (50/76) Installing zlib-dev (1.3.1-r0)
+#19 22.20 (51/76) Installing curl-dev (8.5.0-r0)
+#19 22.25 (52/76) Installing gfortran (13.2.1_git20231014-r0)
+#19 26.67 (53/76) Installing icu (74.1-r0)
+#19 26.76 (54/76) Installing icu-dev (74.1-r0)
+#19 27.00 (55/76) Installing libdeflate-dev (1.19-r0)
+#19 27.34 (56/76) Installing libpng-dev (1.6.40-r0)
+#19 27.37 (57/76) Installing make (4.4.1-r2)
+#19 27.41 (58/76) Installing liblapack (0.3.25-r0)
+#19 28.86 (59/76) Installing liblapacke (0.3.25-r0)
+#19 29.55 (60/76) Installing openblas-ilp64 (0.3.25-r0)
+#19 32.15 (61/76) Installing openblas-dev (0.3.25-r0)
+#19 32.40 (62/76) Installing bsd-compat-headers (0.7.2-r5)
+#19 32.42 (63/76) Installing libformw (6.4_p20231125-r0)
+#19 32.44 (64/76) Installing libmenuw (6.4_p20231125-r0)
+#19 32.46 (65/76) Installing libncurses++ (6.4_p20231125-r0)
+#19 32.48 (66/76) Installing ncurses-dev (6.4_p20231125-r0)
+#19 32.51 (67/76) Installing libedit (20230828.3.1-r3)
+#19 32.54 (68/76) Installing libedit-dev (20230828.3.1-r3)
+#19 32.56 (69/76) Installing libpcre2-16 (10.42-r2)
+#19 32.60 (70/76) Installing libpcre2-32 (10.42-r2)
+#19 32.68 (71/76) Installing pcre2-dev (10.42-r2)
+#19 32.87 (72/76) Installing libhistory (8.2.1-r2)
+#19 33.00 (73/76) Installing readline-dev (8.2.1-r2)
+#19 33.39 (74/76) Installing xz (5.4.5-r0)
+#19 33.43 (75/76) Installing xz-dev (5.4.5-r0)
+#19 33.46 (76/76) Installing R-dev@community (4.4.0-r0)
+#19 33.96 Executing busybox-1.36.1-r16.trigger
+#19 33.97 Executing glib-2.78.6-r0.trigger
+#19 33.97 OK: 597 MiB in 146 packages
+#19 DONE 34.3s
+
+#20 [15/20] COPY dockerfile_basic_amd64.txt /dockerfile_basic_amd64.txt
+#20 DONE 0.0s
+
+#21 [16/20] COPY test.sh /test.sh
+#21 DONE 0.0s
+
+#22 exporting to image
+#22 exporting layers
+#22 exporting layers 1.2s done
+#22 writing image sha256:7a957447d5e618be4044d2f7214c9a95035436c122edf8fb1a18d14877493394
+#22 writing image sha256:7a957447d5e618be4044d2f7214c9a95035436c122edf8fb1a18d14877493394 done
+#22 naming to docker.io/sswiston/phylo_docker:basic_amd64 done
+#22 DONE 1.3s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/f0w0crjg9nnnnykb5b39z8fko
+
+What's Next?
+  View a summary of image vulnerabilities and recommendations → docker scout quickview

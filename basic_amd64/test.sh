@@ -6,4 +6,8 @@ python --version
 
 # R
 echo ""; echo "Checking for R..."; echo ""
-R --version | head -n 2 | tail -n 1
+R --version | head -n 1
+
+# JULIA
+echo ""; echo "Checking for Julia..."; echo ""
+julia --version | head -n 2

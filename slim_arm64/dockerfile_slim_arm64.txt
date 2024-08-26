@@ -21,6 +21,7 @@ RUN apk add libpng-dev tiff-dev jpeg-dev
 RUN apk add imagemagick-dev
 RUN apk add udunits-dev
 RUN apk add gdal-dev
+RUN apk add font-terminus font-noto font-noto-extra font-arabic-misc
 
 # REVBAYES
 # stochmap_tp_dirty_merge branch commit 55c8174 (20240509)
@@ -34,7 +35,7 @@ ENV PATH /revbayes/projects/cmake:$PATH
 RUN ln -s /revbayes/projects/cmake/rb /usr/local/bin/rb
 
 # TENSORPHYLO
-# tree-inference branch commit daa0aed (20240516)
+# tree-inference branch commit bb934bc (20240708)
 WORKDIR "/"
 RUN git clone https://bitbucket.org/mrmay/tensorphylo.git /tensorphylo
 WORKDIR "/tensorphylo/"
@@ -68,6 +69,7 @@ WORKDIR "/"
 COPY dockerfile_slim_arm64.txt /dockerfile_slim_arm64.txt
 COPY test.sh /test.sh
 ENV HOME "/"
+CMD sleep infinity
 
 # Command for building Docker image:
 # cp Dockerfile dockerfile_slim_arm64.txt; docker buildx build --platform=linux/arm64 -t sswiston/phylo_docker:slim_arm64 . --progress=plain > slim_arm64_build.log 2>&1

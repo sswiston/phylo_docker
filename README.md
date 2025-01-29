@@ -1,1 +1,12 @@
-# phylo_docker
+FOR EACH IMAGE:
+- Update Dockerfile to contain proper programs
+- Update comments in Dockerfile to contain proper versions
+- Update test script
+- Update startup script (if there is one)
+- Update Dockerfile to copy correct test and startup scripts
+- Copy dockerfile to correct location before build (part of the build command at the bottom)
+- Build the Docker image
+- Test the Docker image locally
+- Push the image to hub
+- Update the hub README
+- Test on RIS

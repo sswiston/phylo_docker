@@ -1,0 +1,152 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 669B 0.0s done
+#1 DONE 0.1s
+
+#2 [internal] load metadata for docker.io/library/alpine:3.19.1
+#2 ...
+
+#3 [auth] library/alpine:pull token for registry-1.docker.io
+#3 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/alpine:3.19.1
+#2 DONE 0.9s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [ 1/16] FROM docker.io/library/alpine:3.19.1@sha256:c5b1261d6d3e43071626931fc004f70149baeba2c8ec672bd4f27761f8e1ad6b
+#5 CACHED
+
+#6 [internal] load build context
+#6 transferring context: 971B 0.0s done
+#6 DONE 0.1s
+
+#7 [ 2/16] RUN apk update
+#7 0.563 fetch https://dl-cdn.alpinelinux.org/alpine/v3.19/main/x86_64/APKINDEX.tar.gz
+#7 0.983 fetch https://dl-cdn.alpinelinux.org/alpine/v3.19/community/x86_64/APKINDEX.tar.gz
+#7 2.118 v3.19.7-28-g48fc05ff929 [https://dl-cdn.alpinelinux.org/alpine/v3.19/main]
+#7 2.118 v3.19.7-24-gd657f397261 [https://dl-cdn.alpinelinux.org/alpine/v3.19/community]
+#7 2.118 OK: 23043 distinct packages available
+#7 DONE 2.3s
+
+#8 [ 3/16] RUN apk upgrade
+#8 1.202 Upgrading critical system libraries and apk-tools:
+#8 1.202 (1/1) Upgrading apk-tools (2.14.0-r5 -> 2.14.4-r0)
+#8 1.491 Executing busybox-1.36.1-r15.trigger
+#8 1.676 Continuing the upgrade transaction with new apk-tools:
+#8 1.686 fetch https://dl-cdn.alpinelinux.org/alpine/v3.19/main/x86_64/APKINDEX.tar.gz
+#8 2.068 fetch https://dl-cdn.alpinelinux.org/alpine/v3.19/community/x86_64/APKINDEX.tar.gz
+#8 2.839 (1/8) Upgrading musl (1.2.4_git20230717-r4 -> 1.2.4_git20230717-r5)
+#8 2.906 (2/8) Upgrading busybox (1.36.1-r15 -> 1.36.1-r19)
+#8 2.995 Executing busybox-1.36.1-r19.post-upgrade
+#8 3.025 (3/8) Upgrading busybox-binsh (1.36.1-r15 -> 1.36.1-r19)
+#8 3.065 (4/8) Upgrading ca-certificates-bundle (20230506-r0 -> 20241121-r1)
+#8 3.115 (5/8) Upgrading libcrypto3 (3.1.4-r5 -> 3.1.8-r0)
+#8 3.257 (6/8) Upgrading libssl3 (3.1.4-r5 -> 3.1.8-r0)
+#8 3.306 (7/8) Upgrading ssl_client (1.36.1-r15 -> 1.36.1-r19)
+#8 3.338 (8/8) Upgrading musl-utils (1.2.4_git20230717-r4 -> 1.2.4_git20230717-r5)
+#8 3.373 Executing busybox-1.36.1-r19.trigger
+#8 3.382 OK: 7 MiB in 15 packages
+#8 DONE 3.6s
+
+#9 [ 4/16] RUN apk add bash
+#9 1.107 (1/4) Installing ncurses-terminfo-base (6.4_p20231125-r0)
+#9 1.369 (2/4) Installing libncursesw (6.4_p20231125-r0)
+#9 1.473 (3/4) Installing readline (8.2.1-r2)
+#9 1.522 (4/4) Installing bash (5.2.21-r0)
+#9 1.620 Executing bash-5.2.21-r0.post-install
+#9 1.630 Executing busybox-1.36.1-r19.trigger
+#9 1.654 OK: 10 MiB in 19 packages
+#9 DONE 1.9s
+
+#10 [ 5/16] RUN apk add git
+#10 1.288 (1/11) Installing ca-certificates (20241121-r1)
+#10 1.585 (2/11) Installing brotli-libs (1.1.0-r1)
+#10 1.666 (3/11) Installing c-ares (1.27.0-r0)
+#10 1.705 (4/11) Installing libunistring (1.1-r2)
+#10 1.783 (5/11) Installing libidn2 (2.3.4-r4)
+#10 1.826 (6/11) Installing nghttp2-libs (1.58.0-r0)
+#10 1.863 (7/11) Installing libpsl (0.21.5-r0)
+#10 1.899 (8/11) Installing libcurl (8.12.1-r0)
+#10 1.952 (9/11) Installing libexpat (2.6.4-r0)
+#10 1.994 (10/11) Installing pcre2 (10.42-r2)
+#10 2.043 (11/11) Installing git (2.43.6-r0)
+#10 2.317 Executing busybox-1.36.1-r19.trigger
+#10 2.345 Executing ca-certificates-20241121-r1.trigger
+#10 2.511 OK: 21 MiB in 30 packages
+#10 DONE 2.8s
+
+#11 [ 6/16] RUN apk add unzip
+#11 1.331 (1/1) Installing unzip (6.0-r14)
+#11 1.604 Executing busybox-1.36.1-r19.trigger
+#11 1.625 OK: 21 MiB in 31 packages
+#11 DONE 1.8s
+
+#12 [ 7/16] RUN apk add vim
+#12 1.208 (1/3) Installing vim-common (9.0.2127-r0)
+#12 2.300 (2/3) Installing xxd (9.0.2127-r0)
+#12 2.338 (3/3) Installing vim (9.0.2127-r0)
+#12 2.451 Executing busybox-1.36.1-r19.trigger
+#12 2.472 OK: 52 MiB in 34 packages
+#12 DONE 2.8s
+
+#13 [ 8/16] RUN apk add python3 python3-dev
+#13 1.166 (1/15) Installing libbz2 (1.0.8-r6)
+#13 1.403 (2/15) Installing libffi (3.4.4-r3)
+#13 1.443 (3/15) Installing gdbm (1.23-r1)
+#13 1.488 (4/15) Installing xz-libs (5.4.5-r0)
+#13 1.566 (5/15) Installing libgcc (13.2.1_git20231014-r0)
+#13 1.609 (6/15) Installing libstdc++ (13.2.1_git20231014-r0)
+#13 1.739 (7/15) Installing mpdecimal (2.5.1-r2)
+#13 1.781 (8/15) Installing libpanelw (6.4_p20231125-r0)
+#13 1.819 (9/15) Installing sqlite-libs (3.44.2-r0)
+#13 1.892 (10/15) Installing python3 (3.11.11-r0)
+#13 2.544 (11/15) Installing python3-pycache-pyc0 (3.11.11-r0)
+#13 3.150 (12/15) Installing pyc (3.11.11-r0)
+#13 3.190 (13/15) Installing python3-pyc (3.11.11-r0)
+#13 3.224 (14/15) Installing pkgconf (2.1.0-r0)
+#13 3.379 (15/15) Installing python3-dev (3.11.11-r0)
+#13 5.097 Executing busybox-1.36.1-r19.trigger
+#13 5.170 OK: 162 MiB in 49 packages
+#13 DONE 5.8s
+
+#14 [ 9/16] RUN ln -s /usr/bin/python3 /usr/local/bin/python
+#14 DONE 0.4s
+
+#15 [10/16] RUN apk add py3-pip
+#15 1.225 (1/8) Installing py3-setuptools-pyc (70.3.0-r0)
+#15 1.669 (2/8) Installing py3-pip-pyc (23.3.1-r0)
+#15 2.021 (3/8) Installing py3-parsing (3.1.1-r0)
+#15 2.077 (4/8) Installing py3-parsing-pyc (3.1.1-r0)
+#15 2.152 (5/8) Installing py3-packaging-pyc (23.2-r0)
+#15 2.195 (6/8) Installing py3-packaging (23.2-r0)
+#15 2.237 (7/8) Installing py3-setuptools (70.3.0-r0)
+#15 2.384 (8/8) Installing py3-pip (23.3.1-r0)
+#15 2.663 Executing busybox-1.36.1-r19.trigger
+#15 2.696 OK: 188 MiB in 57 packages
+#15 DONE 3.0s
+
+#16 [11/16] COPY dockerfile_test_amd64.txt /dockerfile_test_amd64.txt
+#16 DONE 0.1s
+
+#17 [12/16] COPY test.sh /test.sh
+#17 DONE 0.1s
+
+#18 [13/16] COPY start.sh /start.sh
+#18 DONE 0.1s
+
+#19 exporting to image
+#19 exporting layers
+#19 exporting layers 1.9s done
+#19 writing image sha256:751b447dcc750223599690040ef5d152805d101deb083378c400f8453b6eaef9
+#19 writing image sha256:751b447dcc750223599690040ef5d152805d101deb083378c400f8453b6eaef9 done
+#19 naming to docker.io/sswiston/phylo_docker:test_amd64 0.0s done
+#19 DONE 1.9s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/1wdtu3802150xy57r95gokgzi
+
+ [33m1 warning found (use docker --debug to expand):
+[0m - JSONArgsRecommended: JSON arguments recommended for CMD to prevent unintended behavior related to OS signals (line 25)

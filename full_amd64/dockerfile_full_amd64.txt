@@ -5,7 +5,8 @@ FROM sswiston/phylo_docker:slim_amd64
 WORKDIR "/"
 RUN git clone https://github.com/google-deepmind/tree.git
 WORKDIR "/tree"
-RUN sed -i 's/ABSEIL_VER 20210324.2/ABSEIL_VER 20240722.rc2/g' tree/CMakeLists.txt
+RUN sed -i 's/20220623.2/20240722.rc2/g' tree/CMakeLists.txt
+RUN sed -i 's/773652c0fc276bcd5c461668dc112d0e3b6cde499600bfe3499c5fdda4ed4a5b/30c36fd3f54a1a2650b7e9a006139d6da24058e54a88bda21a221fba7ebf8838/g' tree/CMakeLists.txt
 RUN python3 setup.py install
 
 # PHYLOJUNCTION
@@ -13,6 +14,7 @@ RUN python3 setup.py install
 WORKDIR "/"
 RUN apk add mesa-gl hdf5-dev
 RUN apk add py3-pyside6
+RUN python -m pip install pysimplegui --break-system-packages
 RUN git clone https://github.com/fkmendes/PhyloJunction.git
 WORKDIR "/PhyloJunction/"
 RUN python -m pip install --prefix /.local -e .
@@ -54,7 +56,6 @@ RUN R -e "install.packages('ratematrix',dependencies=TRUE,repos='http://cran.rst
 RUN R -e "install.packages('diversitree',dependencies=TRUE,repos='http://cran.rstudio.com/')"
 RUN R -e "install.packages('TreeSim',dependencies=TRUE,repos='http://cran.rstudio.com/')"
 RUN R -e "library(remotes); remotes::install_url(\"http://cran.nexr.com/src/contrib/TreePar_3.3.tar.gz\")"
-RUN R -e "install.packages('FossilSim',dependencies=TRUE,repos='http://cran.rstudio.com/')"
 RUN R -e "install.packages('corHMM',dependencies=TRUE,repos='http://cran.rstudio.com/')"
 RUN R -e "install.packages('hisse',dependencies=TRUE,repos='http://cran.rstudio.com/')"
 RUN R -e "install.packages('OUwie',dependencies=TRUE,repos='http://cran.rstudio.com/')"
@@ -71,6 +72,7 @@ RUN R -e "install.packages('cowplot',dependencies=TRUE,repos='http://cran.rstudi
 RUN R -e "install.packages('tikzDevice',dependencies=TRUE,repos='http://cran.rstudio.com/')"
 RUN R -e "library(BiocManager); BiocManager::install(\"ggtree\")"
 RUN R -e "library(devtools); devtools::install_github(\"revbayes/RevGadgets\")"
+RUN R -e "install.packages('FossilSim',dependencies=TRUE,repos='http://cran.rstudio.com/')"
 
 # JULIA PACKAGES
 WORKDIR "/"
@@ -85,7 +87,7 @@ RUN julia -e 'import Pkg; Pkg.add("Distributions"); using Distributions'
 RUN julia -e 'import Pkg; Pkg.add("Phylo"); using Phylo'
 RUN julia -e 'import Pkg; Pkg.add("Optim"); using Optim'
 RUN julia -e 'import Pkg; Pkg.add("RCall"); using RCall'
-RUN julia -e 'import Pkg; Pkg.add("Tapestree"); using Tapestree'
+RUN julia -e 'import Pkg; Pkg.add(Pkg.PackageSpec(;name="Tapestree",version="0.3.0")); using Tapestree'
 RUN julia -e 'import Pkg; Pkg.add("Parameters"); using Parameters'
 RUN julia -e 'import Pkg; Pkg.add("StaticArrays"); using StaticArrays'
 RUN julia -e 'import Pkg; Pkg.add("BenchmarkTools"); using BenchmarkTools'

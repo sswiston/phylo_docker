@@ -5,7 +5,7 @@ FROM sswiston/phylo_docker:basic_amd64
 RUN apk add boost-dev
 
 # REVBAYES
-# stochmap_tp_dirty_merge branch commit 6a276d0 (20240721)
+# stochmap_tp_dirty_merge branch commit d86165c (20241218)
 WORKDIR "/"
 RUN git clone https://github.com/revbayes/revbayes.git /revbayes
 WORKDIR "/revbayes/"
@@ -16,7 +16,7 @@ ENV PATH=/revbayes/projects/cmake:$PATH
 RUN ln -s /revbayes/projects/cmake/rb /usr/local/bin/rb
 
 # TENSORPHYLO
-# tree-inference branch commit 4249a83 (20240717)
+# tree-inference branch commit b326fbf (20250213)
 WORKDIR "/"
 RUN git clone https://bitbucket.org/mrmay/tensorphylo.git /tensorphylo
 WORKDIR "/tensorphylo/"

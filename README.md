@@ -29,7 +29,7 @@ Full Programs:
 
 Heavy Programs:
 - All full programs
-- Java openjdk11
+- Java openjdk17
 - BEAST2
 - Beagle
 

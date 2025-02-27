@@ -22,9 +22,9 @@ RUN git clone https://bitbucket.org/mrmay/tensorphylo.git /tensorphylo
 WORKDIR "/tensorphylo/"
 RUN git checkout tree-inference
 WORKDIR "/tensorphylo/build/installer/"
-RUN bash install.sh
-RUN mkdir /.plugins
-RUN cp /tensorphylo/build/installer/lib/libTensorPhylo.so /.plugins/libTensorPhylo.so
+RUN bash install.sh && \
+    mkdir /.plugins && \
+    cp /tensorphylo/build/installer/lib/libTensorPhylo.so /.plugins/libTensorPhylo.so
 
 # FINISHING
 WORKDIR "/"
